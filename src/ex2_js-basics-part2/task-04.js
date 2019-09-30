@@ -1,8 +1,6 @@
-const isElementsEqual = function(elements) {
-    for (let i = 1;i < elements.length;i++)
-    {
-        if (elements[0] !== elements[i])
-        {
+function isElementsEqual(elements) {
+    for (let i = 1;i < elements.length;i++){
+        if (elements[0] !== elements[i]){
             return false;
         }
     }

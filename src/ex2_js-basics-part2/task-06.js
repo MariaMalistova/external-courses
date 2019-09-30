@@ -1,18 +1,13 @@
-const isPrimeNumber = function(value) {
+function isPrimeNumber(value) {
     let result;
-    if (typeof value === 'number' && value >= 0 && value <= 1000)
-    {
-        if (value < 2)
-        {
+    if (typeof value === 'number' && value >= 0 && value <= 1000){
+        if (value < 2){
             result = 'Число ' + value + ' - не простое и не составное число';
             console.log(result);
         }
-        else 
-        {
-            for (let divisor = 2;divisor < value-1;divisor++)
-            {
-                if (value % divisor === 0)
-                {
+        else {
+            for (let divisor = 2;divisor < value-1;divisor++){
+                if (value % divisor === 0){
                     result = 'Число ' + value + ' - составное число';
                     console.log(result);
                     return result;
@@ -22,8 +17,7 @@ const isPrimeNumber = function(value) {
             console.log(result);
         }
     }
-    else
-    {
+    else{
         result = 'Данные неверны';
         console.log(result);
     }
