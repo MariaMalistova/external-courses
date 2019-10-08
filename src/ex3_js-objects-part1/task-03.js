@@ -1,11 +1,7 @@
 function isPropertyExists(stringArg, objectArg){
-    let result;
     if (stringArg in objectArg){
-        result = true;
+        return true;
     }
-    else {
-        result = false;
-    }
-    return result;
+    return false;
 }
 module.exports = isPropertyExists;
