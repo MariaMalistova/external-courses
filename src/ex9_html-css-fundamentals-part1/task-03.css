@@ -1,0 +1,40 @@
+button {
+    width: 210px;
+    height: 64px;
+    background: white;
+    border: 1.5px solid rgb(102, 102, 102);
+    border-radius: 14px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    position: absolute;
+}
+#innerBackground {
+    border-radius: 12px;
+    background: rgb(203, 203, 203);
+    width: 204px;
+    height: 57px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+#innerArea {
+    border-radius: 10px;
+    width: 194px;
+    height: 47px;
+    position: absolute;
+    top: 5px;
+    left: 5px; 
+    box-shadow: 0 0 3px rgba(0,0,0,0.5); 
+    background: linear-gradient(#E0E0E0, #D3D3D3 48%, #C6C6C6 52%, #ADADAD);    
+}
+.text {  
+    position: absolute;
+    top: 50%;
+    margin-top: -0.625em;
+    left: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+}
+.star {
+    color: #888888; 
+}

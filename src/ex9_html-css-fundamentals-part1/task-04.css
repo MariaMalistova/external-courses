@@ -1,0 +1,46 @@
+div, ::after, ::before {
+    height: 300px;
+    width: 500px;
+    position: absolute;
+}
+#version1 .layer1 {
+    background-color: rgb(96, 184, 141);
+    z-index: 3;
+}
+#version1 .layer2 {
+    z-index: 2;
+    top: 8px;
+    left: 8px;
+    background-color: rgb(144, 205, 175);
+}
+#version1 .layer3 {
+    z-index: 1;
+    top: 16px;
+    left: 16px;
+    background-color: rgb(191, 227, 209);
+}
+#version2 .layer {
+    background-color: rgb(144, 205, 175);
+    top: 350px;
+    left: 15px;
+}
+#version2 .layer::before {
+    top: -8px;
+    left: -8px;
+    background-color: rgb(96, 184, 141); 
+}
+#version2 .layer::after {
+    top: 8px;
+    left: 8px;
+    background-color: rgb(191, 227, 209);  
+    z-index: -1; 
+}
+#version2 .layer::after, #version2 .layer::before{
+    display: block;
+    content: "";  
+}
+#version3 .layer {
+    background-color: rgb(96, 184, 141);
+    left: 550px;
+    box-shadow: 8px 8px 0 rgb(144, 205, 175),16px 16px 0 rgb(191, 227, 209);
+}
