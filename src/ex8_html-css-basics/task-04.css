@@ -1,0 +1,46 @@
+@font-face {
+    font-family: BirchStd;
+    src: url(BirchStd.otf);
+}
+.orderedList {
+    background-color: #45ACDC;
+    width: 135px;
+    height: 157px;
+    font-family: "Arial";
+    font-size: 12pt;
+    text-align: center;
+}
+.unorderedList {
+    background-color: rgb(177, 16, 150);
+    width: 2in;
+    height: 2in;
+    font-family: "Bookman";
+    font-size: 16pt;
+    text-align: left;
+    font-style: italic;
+}
+.listWithLinks {
+    background-color: rgba(12, 150, 108, 0.7);
+    width: 121pt;
+    height: 114pt;
+    font-family: "Comic Sans";
+    font-size: 19px;
+    text-align: right;
+}
+
+.paragraphs {
+    background-color: gold;
+    width: 39cm;
+    height: 8cm;
+    font-family: "BirchStd";
+    font-size: 14pt;
+}
+.tables {
+    background-image: url(Luke.jpg);
+    width: 67mm;
+    height: 40mm;
+    color: white;
+    font-family: "fantasy";
+    font-size: 13pt;
+    text-align: left;
+}
