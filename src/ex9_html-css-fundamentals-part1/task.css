@@ -1,0 +1,82 @@
+body {
+    width: 600px;
+    margin: 20px auto;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+header {
+    border-bottom: 2px solid black;
+}
+form div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.formHeader {
+    font-weight: bold;
+}
+.headerInfo {
+    color: red;
+    font-size: 14px;
+}
+label input, label textarea {
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 0 1.5px;
+    width: 200px;
+    height: 20px;
+    padding: 4px;
+    margin-top: 6px;
+    grid-column: 2;
+}
+label {
+    display: grid;
+    grid-template-columns: 25% 45% 30%;
+    grid-template-rows: 40px
+}
+label span {
+    grid-column: 1;
+    align-self: center;
+}
+.message span {
+    align-self: start;
+    padding-top: 5px;
+}
+.message textarea {
+    width: 240px;
+    height: 70px;
+    resize: none;
+}
+.button {
+    margin-left: 80px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1.3px solid rgb(203, 203, 204);
+    background: rgb(243, 243, 243);
+    margin-top: 60px;
+}
+.flagBox {
+    width: 120px;
+    height: 18px;
+    background: rgb(212, 82, 82); 
+    text-align: center;
+    padding-top: 6px; 
+    font-size: 10px;  
+    color: white; 
+}
+.flagTriangle {
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;  
+    border-right: 5px solid rgb(212, 82, 82);  ; 
+}
+.flag {
+    grid-column: 3;
+    display: flex;
+    position: relative;
+    top: -5px;
+    visibility: visible; 
+}
+input:valid + .flag {
+    visibility: hidden;
+}
