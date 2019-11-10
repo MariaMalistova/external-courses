@@ -1,0 +1,108 @@
+.external-loader {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    background: radial-gradient(at top, white, blueviolet);
+    animation-name: loader;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-direction: normal;    
+}
+.internal-loader {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    background-color: white;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+@keyframes loader {
+    0% { 
+      transform: rotate(0deg);
+    }
+    100%  { 
+      transform: rotate(360deg);
+    }
+}
+.infinite-animation {
+    margin: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background: linear-gradient(#EB801D, #0DA572);
+    animation-name: circle-square;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    animation-direction: normal;            
+}
+@keyframes circle-square {
+    17%  { 
+        border-radius: 0;
+    }
+    33% {
+        background: linear-gradient(#E66465, #9198E5);
+    }
+    50% {
+        height: 100px;
+        width: 100px;
+        transform: skew(17deg, 32deg);
+    }
+    67% {
+        transform: rotate(170deg);
+    }
+    83% {
+        background: linear-gradient(#EB801D, #0DA572);       
+    }
+    100% {
+        border-radius: 100%;
+    }
+}
+.ball-container {
+    width: 274px;
+    height: 1px;
+    position: relative;
+    left: 50px;
+    bottom: 35px;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-direction: normal;  
+}
+.blocks-ball {
+    margin: 10px;
+    height: 200px;
+    margin-top: 170px;
+}
+.block1, .block2 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #0DA572;
+}
+.block2 {
+    left: 170px;
+    position: relative;
+}
+.ball {
+    width: 70px;
+    height: 70px;  
+    background: rgb(233, 61, 9);  
+    border-radius: 100%;
+    position: relative;
+    left: -50px;
+    bottom: 35px;
+}
+@keyframes bounce {
+    0% { 
+      transform: rotate(0deg);
+    }
+    50%  { 
+      transform: rotate(180deg);    
+    }
+    100%  { 
+        transform: rotate(0deg);
+    }    
+}
