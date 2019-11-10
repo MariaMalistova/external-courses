@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Task</title>
+        <link rel="stylesheet" href="task.css">
+    </head>
+
+    <body>
+        <header>
+            <span class="formHeader">Form Here</span>
+            <br>
+            <span class="headerInfo">* required fields</span>
+        </header>
+        <form>
+            <div>
+                <label>
+                    <span>Name:</span>
+                    <input type="text" name="username" placeholder="placeholder text">
+                </label>                    
+            </div>
+            <div class="inputCheck">
+            <div>
+                <label>
+                    <span>Email:</span>
+                    <input required type="email" name="email" placeholder="placeholder text">
+                    <span class="flag">
+                        <span class="flagTriangle"></span>
+                        <span class="flagBox">Form Field hint</span> 
+                    </span> 
+                </label> 
+                 
+            </div>                   
+            </div>                    
+               
+            <div>
+                <label>
+                    <span>Website:</span>
+                    <input required type="url" name="website" placeholder="placeholder text">
+                    <span class="flag">
+                            <span class="flagTriangle"></span>
+                            <span class="flagBox">Form Field hint</span> 
+                    </span> 
+                </label>                    
+            </div>
+            <div>
+                <label class="message">
+                    <span>Message:</span>
+                    <textarea rows="5" name="message"></textarea>
+                </label>                    
+            </div> 
+            <input class="button" type="button" value="Submit">                       
+        </form>
+    </body>
+</html>
