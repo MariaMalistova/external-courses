@@ -12,17 +12,19 @@
                 <p><label for="firstName">First name</label><input required type="text" id="firstName"></p>
                 <p><label for="middleName">Middle name</label><input required type="text" id="middleName"></p>
                 <p>
-                    <label for="middleName">You are</label>
-                    <input type="radio" name="gender" value="male" checked>male
-                    <input type="radio" name="gender" value="female">female
+                    <label>You are</label>
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">female</label>
                 </p>
                 <p><label for="age">Age</label><input type="number" id="age" min="18" max="101" required></p>
                 <p>
                     <label>Country of Residence</label>
                     <select name="country">
-                        <option value=" ">&nbsp;</option>
-                        <option value="Russia">Russia</option>
-                        <option value="Belarus">Belarus</option>
+                        <option label=" " value=" "></option>
+                        <option label="Russia" value="Russia">Russia</option>
+                        <option label="Belarus" value="Belarus">Belarus</option>
                     </select>
                 </p>
                 <p>
