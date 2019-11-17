@@ -16,19 +16,19 @@ main {
     box-sizing: border-box; 
 }
 .logoBack {
+    width: 403px; 
     display: flex;
     justify-content: center;
-    align-items: center;  
-    width: 403px;  
+    align-items: center;      
 }
 .logo {
-    width: 77px;
     height: 41px;
+    width: 77px;    
     color: #3687c4;
     font-family: "Open Sans";
     font-size: 41px;
     font-weight: 400;
-    line-height: 34px;  
+    line-height: 34px;
 }
 .logo-contact {
     display: flex;
