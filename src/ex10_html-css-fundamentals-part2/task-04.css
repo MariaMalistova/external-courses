@@ -2,6 +2,9 @@
     font-family: "Open Sans";
     src: url(open-sans.ttf);
 }
+body {
+    margin: auto;
+}
 main {
     background-size: contain;
     background-repeat: no-repeat; 
@@ -190,7 +193,7 @@ a {
         border-right: 17.5px solid transparent;  
         border-bottom: 8px solid #1faae2;
         position: absolute;
-        top: 305px;
+        top: 297px;
         display: none;
     }
     .home {
@@ -225,13 +228,13 @@ a {
         right: 190px;
     }
     .iconMark + .pop {
-        right: 30px;
+        right: 27px;
     }
     .iconMark + .pop span{
         right: 208px;
     }
     .iconMail + .pop {
-        right: 22px;
+        right: 18px;
     }
     .iconMail + .pop span{
         right: 174px;
