@@ -1,0 +1,14 @@
+img {
+    width: 1000px;
+    max-height: 600px;
+} 
+#shape {
+    width: 1000px;
+    height: 600px;
+    clip-path: polygon(10% 0, 37% 50%, 10% 100%, 73% 100%, 80% 80%, 67% 27%, 90% 0);
+}
+#circle {
+    width: 1000px;
+    height: 600px;
+    clip-path: circle(28% at 53% 60%);
+}
