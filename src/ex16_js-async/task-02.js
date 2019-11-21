@@ -9,6 +9,7 @@ function debounce(func, delay) {
         }), delay);
     } 
 }
+
 let input = document.querySelector('input');
 input.addEventListener('input', debounce(find, 2000)); 
 
