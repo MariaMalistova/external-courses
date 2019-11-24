@@ -1,0 +1,25 @@
+div {
+    margin: 20px;
+    position: relative;
+}
+input {
+    padding-top: 12px;
+}
+label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    margin-left: 3px;
+    color: black;
+}
+input:invalid + label {
+    opacity: 0; 
+}
+input:valid + label { 
+    opacity: 1;
+    transition: 1s;
+}
+input:focus + label { 
+    color: blue; 
+}
