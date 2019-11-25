@@ -5,12 +5,12 @@ const photos = document.getElementsByClassName("photos")[0];
 photos.appendChild(image);
 let currentElementIndex = 0;
 let buttons = document.getElementsByClassName("button");
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", button);
-}
+buttons[0].addEventListener("click", changePhoto);
+buttons[1].addEventListener("click", changePhoto);
 
-function button() {
-    if (Array.from(this.parentElement.children).indexOf(this) === 0){
+
+function changePhoto() {
+    if (buttons[0] === this){
         if (currentElementIndex === 0) {
             currentElementIndex = images.length - 1;   
         } 
