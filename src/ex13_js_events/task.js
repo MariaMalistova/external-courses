@@ -1,20 +1,19 @@
 let nav = document.querySelector("nav"); 
-let arrow = document.getElementsByClassName("arrow");
+let arrow = document.getElementsByClassName("arrow")[0];
 function showMenu() {
     if (window.getComputedStyle(nav, null).display === "none") {                        
         nav.style.display = "flex";
-        arrow[0].style.transform = "rotate(180deg)";
-    }
-    else {
+        arrow.style.transform = "rotate(180deg)";
+    } else {
         nav.style.display = "none";
-        arrow[0].style.transform = "rotate(0deg)";
+        arrow.style.transform = "rotate(0deg)";
     }
 }
 
-let dataMockGet = JSON.parse(localStorage.getItem("dataMock")); 
+let mockData = JSON.parse(localStorage.getItem("mockData")); 
 
-if (!dataMockGet) {
-    dataMockGet = [
+if (!mockData) {
+    mockData = [
         {
             title: 'backlog',
             issues: [
@@ -38,31 +37,31 @@ if (!dataMockGet) {
     ]
 }
 
-for (let index = 0; index < dataMockGet.length; index++) { 
-    for (let i = 0; i < dataMockGet[index].issues.length; i++) {
+for (let index = 0; index < mockData.length; index++) { 
+    for (let i = 0; i < mockData[index].issues.length; i++) {
         let tasks = document.getElementsByClassName("tasks")[index];
         let taskContainer = document.createElement("div");
         taskContainer.setAttribute("class", "task");
-        taskContainer.innerHTML = dataMockGet[index].issues[i].name;
+        taskContainer.innerHTML = mockData[index].issues[i].name;
         tasks.appendChild(taskContainer);  
         addSpaceScroll(index);    
     }
 }
 
-for (let i = 1; i < dataMockGet.length; i++) {
-    if (dataMockGet[i - 1].issues.length === 0) {
+for (let i = 1; i < mockData.length; i++) {
+    if (mockData[i - 1].issues.length === 0) {
         let buttons = document.getElementsByClassName("add-cart")[i];
         buttons.style.color = "#ACB5C4";
         buttons.setAttribute("disabled", "disabled");
     }
 }
 
-for (let i = 0; i < dataMockGet.length; i++) {
+for (let i = 0; i < mockData.length; i++) {
     let btn = document.getElementsByClassName("add-cart")[i];
-    btn.addEventListener("click", addCartOnClick);
+    btn.addEventListener("click", addCart);
 }
 
-function addCartOnClick() {
+function addCart() {
     let statusBox = this.parentElement;
     let index = Array.from(statusBox.parentElement.children).indexOf(statusBox);
     let tasksClick = document.getElementsByClassName("tasks")[index];
@@ -76,10 +75,10 @@ function addCartOnClick() {
         let nullOption = document.createElement("option");
         taskContainer.appendChild(nullOption);
         nullOption.innerHTML = "";
-        for (let i = 0; i < dataMockGet[index - 1].issues.length; i++) {
+        for (let i = 0; i < mockData[index - 1].issues.length; i++) {
             let option = document.createElement("option");
             taskContainer.appendChild(option);
-            option.innerHTML = dataMockGet[index - 1].issues[i].name;
+            option.innerHTML = mockData[index - 1].issues[i].name;
         }
         tasksClick.appendChild(taskContainer); 
     }
@@ -97,21 +96,21 @@ function addCartOnBlur() {
         container.appendChild(taskContainer);
         let taskNum = this.parentElement.parentElement.parentElement;
         let index = Array.from(taskNum.parentElement.children).indexOf(taskNum);
-        let tasksLength = dataMockGet[index].issues.length;
-        let newTask = dataMockGet[index].issues.push({name: "", id: ""})
-        dataMockGet[index].issues[tasksLength].id = "task" + (tasksLength + 1);
-        dataMockGet[index].issues[tasksLength].name = taskContainer.innerHTML;
+        let tasksLength = mockData[index].issues.length;
+        let newTask = mockData[index].issues.push({name: "", id: ""})
+        mockData[index].issues[tasksLength].id = "task" + (tasksLength + 1);
+        mockData[index].issues[tasksLength].name = taskContainer.innerHTML;
 
         if (index !== 0) {
             let indexDelete = this.selectedIndex - 1;
             let taskDeleteContainer = document.getElementsByClassName("tasks")[index-1];
             let elementDelete = taskDeleteContainer.getElementsByTagName("div")[indexDelete];
             taskDeleteContainer.removeChild(elementDelete);
-            dataMockGet[index - 1].issues.splice(indexDelete, 1);
-            for (let i = indexDelete; i < dataMockGet[index - 1].issues; i++) {
-                dataMockGet[index].issues[i].id = "task" + (i + 1);
+            mockData[index - 1].issues.splice(indexDelete, 1);
+            for (let i = indexDelete; i < mockData[index - 1].issues; i++) {
+                mockData[index].issues[i].id = "task" + (i + 1);
             }
-            if (dataMockGet[index - 1].issues.length === 0) {
+            if (mockData[index - 1].issues.length === 0) {
                 let buttonPrevious = document.getElementsByClassName("add-cart")[index];
                 buttonPrevious.style.color = "#ACB5C4";
                 buttonPrevious.setAttribute("disabled", "disabled");                
@@ -135,10 +134,10 @@ function addSpaceScroll(i) {
 }
 
 window.addEventListener("unload", function() {
-    let dataMockSet = JSON.stringify(dataMockGet); 
-    localStorage.setItem("dataMock", dataMockSet); 
-    for (let i = 0; i < dataMockGet.length; i++) {
+    let mockDataJSON = JSON.stringify(mockData); 
+    localStorage.setItem("mockData", mockDataJSON); 
+    for (let i = 0; i < mockData.length; i++) {
         let btn = document.getElementsByClassName("add-cart")[i];
-        btn.removeEventListener("click", addCartOnClick);
+        btn.removeEventListener("click", addCart);
     }    
 });
