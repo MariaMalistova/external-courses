@@ -1,27 +1,30 @@
 const images = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"];
 const image = document.createElement("img");
 image.setAttribute("src", "asset/" + images[0]);
-const photos = document.getElementById("photos");
+const photos = document.getElementsByClassName("photos")[0];
 photos.appendChild(image);
-let currenrElementIndex = 0;
-
-function leftButton() {
-    if (currenrElementIndex === 0) {
-        currenrElementIndex = images.length - 1;      
-    } 
-    else {
-        currenrElementIndex --;
-    }
-    image.setAttribute("src", "asset/" + images[currenrElementIndex]);
-    photos.appendChild(image);
+let currentElementIndex = 0;
+let buttons = document.getElementsByClassName("button");
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", button);
 }
-function rigthButton() {
-    if (currenrElementIndex === images.length - 1) {
-        currenrElementIndex = 0;      
-    } 
-    else {
-        currenrElementIndex ++;
-    }
-    image.setAttribute("src", "asset/" + images[currenrElementIndex]);
+
+function button() {
+    if (Array.from(this.parentElement.children).indexOf(this) === 0){
+        if (currentElementIndex === 0) {
+            currentElementIndex = images.length - 1;   
+        } 
+        else {
+            currentElementIndex --;
+        }
+    } else {
+        if (currentElementIndex === images.length - 1) {
+            currentElementIndex = 0;      
+        } 
+        else {
+            currentElementIndex ++;
+        }
+    }   
+    image.setAttribute("src", "asset/" + images[currentElementIndex]);
     photos.appendChild(image);
 }
