@@ -105,8 +105,8 @@ class Gift {
         for (let i = 0; i < this.sweets.length; i++) {
                 if (this.sweets[i].name === sweetName) {
                     for (let key in this.sweets[i]) { 
-                        if (key in this.sweets[i]) {
-                        sweetInfo += key + ": " + this.sweets[i][key] + "\n";    
+                        if (this.sweets[i].hasOwnProperty(key)) {
+                            sweetInfo += key + ": " + this.sweets[i][key] + "\n";    
                         }
                     }
                     isSweetFound = true;
