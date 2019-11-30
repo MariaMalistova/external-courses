@@ -126,7 +126,6 @@ const lickieLoo = new Candy("lickie loo", 53, "vanilla");
 const koffeeKandy = new Candy("koffee kandy", 41, "chocolate");
 const kokoKringle = new ChocolateFigure("koko kringle", 103, "milk");
 const cowAMel = new Marshmallow("cow a mel", 45, true);
-
 const gift = new Gift([moonChunk, lickieLoo, koffeeKandy, kokoKringle, cowAMel]);
 console.log(gift.calculateWeight());
 gift.sortTasteSweets();

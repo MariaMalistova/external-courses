@@ -27,7 +27,7 @@ Room.prototype.findAppliance = function(applianceName) {
     for (let i = 0; i < this.appliances.length; i++) {
         if (this.appliances[i].name === applianceName) {
             for (let key in this.appliances[i]) {
-                if (key in this.appliances[i] && typeof this.appliances[i][key] !== "function") {
+                if (this.appliances[i].hasOwnProperty(key) && typeof this.appliances[i][key] !== "function") {
                     applianceInfo += key + ": " + this.appliances[i][key] + "\n"; 
                 }
             }
