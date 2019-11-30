@@ -1,0 +1,43 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photos {
+    background: rgba(128, 128, 128, 0.3);
+    background-size: contain;
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+img {
+    animation-name: nextPic;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+    animation-direction: normal;
+    height: 100%;
+}
+.button {
+    height: 100px;
+    width: 70px;
+    font-size: 40px;
+    background: darkgray;
+    border: none;
+}
+.button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    outline: 1px solid black;
+}
+@keyframes nextPic {
+    30% {
+        transform: rotate(33deg);
+        opacity: 0.7;
+    }
+    to { 
+      height: 100%;
+      opacity: 1;
+    }
+}
