@@ -1,15 +1,14 @@
-function debounce(func, delay) { 
+function debounce(callback, delay) { 
     let timer;
     return function() { 
         let context = this;
         let args = arguments;
         clearTimeout(timer);
         timer = setTimeout((function(){
-            func.apply(context, args);
+            callback.apply(context, args);
         }), delay);
-    } 
-}
-
+    }
+}  
 let input = document.querySelector('input');
 input.addEventListener('input', debounce(find, 2000)); 
 

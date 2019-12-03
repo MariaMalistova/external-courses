@@ -1,12 +1,5 @@
-function fetchLike(url, options) {
-    let xhr = new XMLHttpRequest();
-    let method;
-    if (options) {
-        method = "POST";
-    } 
-    else {
-        method = "GET"; 
-    }   
+function fetchPolyfill(url, options = {method: "GET", body: {}, headers: {}}) {
+    let xhr = new XMLHttpRequest();  
   
     return new Promise(function(resolve, reject) {
         xhr.onload = function () {
@@ -15,10 +8,10 @@ function fetchLike(url, options) {
         xhr.onerror = function() {  
             reject(xhr.status + ': ' + xhr.statusText);  
         };  
-        xhr.open(method, url);  
+        xhr.open(options.method, url);  
         if (options) {
             for (let header in options.headers) {
-                if (header in options.headers) {
+                if (options.headers.hasOwnProperty(header)) {
                     xhr.setRequestHeader(header, options.headers[header]);    
                 }    
             }
